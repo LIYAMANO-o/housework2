@@ -1,0 +1,28 @@
+
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.box{
+    width:550px;
+    height:40px;  
+    border:2px solid#ccc; 
+    margin:auto; 
+    margin-top: 10px;
+}
+p{
+    width:20px; 
+    height:20px;
+    float:left;
+    margin-top: 10px; 
+    margin-left:20px;
+}
+.word{
+    width:550px;
+    height:50px;
+    margin:auto;
+    margin-top:20px;
+}
+

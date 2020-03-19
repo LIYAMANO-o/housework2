@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>换肤</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <fieldset style="width:500px; height:180px">
+        <legend style="color:red; font-size: 30px;">网页换肤</legend>
+        <div class="box">
+            <p class="0"
+            style="background-color:silver;"></p>
+            <p class="1" style="background-color:plum;" ></p>
+            <p class="2" style="background-color:pink;"  ></p>
+            <p class="3" style="background-color:royalblue;" ></p>
+            <p class="4" style="background-color:wheat;" ></p>
+            <p class="5" style="background-color:palegreen;"  ></p>
+        </div> 
+        <div class="word"  id="words">
+           LocalStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了，<br>该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用。 
+        </div>
+    </fieldset> 
+
+</body>
+<script>
+   var change=document.getElementsByTagName("p");
+   var words=document.getElementById("words");
+   for(var i=0;i<6;i++){//颜色方块上移效果
+       change[i].onclick=function(){
+           var num=this.className;
+           change[num].style.marginTop="7px";
+           for(var j=0;j<6;j++){
+               if(j!=num){
+                   change[j].style.marginTop="13px";
+               }
+           }
+           var bcolour;
+           bcolour=this.style.backgroundColor;
+           words.style.backgroundColor=bcolour;
+           localStorage.setItem("backgroundColor",bcolour);
+           localStorage.setItem("class",num);
+       }
+   }
+   var s=localStorage.getItem("class");
+   if(s){
+       words.style.backgroundColor=localStorage.getItem("backgroundColor");
+       change[s].style.marginTop="7px";
+   }
+   else{
+       change[0].style.marginTop="7px";
+       words.style.backgroundColor="silver";
+   }
+    
+    
+ 
+</script>
+</html>
